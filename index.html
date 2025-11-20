@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="decoracio.css">
+    <script src="funcionalitat.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Gerard&Pol's Connect Four</h1>
+    </header>
+
+    <div id="pantalla-configuracio">
+        <h2>Game Menu</h2>
+        
+        <div class="input-group">
+            <label for="modalitat">Game Mode:</label>
+            <select id="modalitat" onchange="actualitzarCamps()">
+                <option value="pvp">Player vs Player</option>
+                <option value="pvc">Player vs IA</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="nomJ1">Name Player 1:</label>
+            <input type="text" id="nomJ1" placeholder="Sergio" value="Player 1">
+        </div>
+        
+        <div class="input-group">
+            <label for="nomJ2">Name Player 2:</label>
+            <input type="text" id="nomJ2" placeholder="Anton" value="Player 2">
+        </div>
+        
+        <button onclick="iniciarPartida()">Play!</button>
+    </div>
+
+    <div id="pantalla-joc" class="hidden">
+        
+        <div id="marcador">
+            Score: <span id="text-nom-j1">Player 1</span> <span id="puntuacio">0 - 0</span> <span id="text-nom-j2">Player 2</span>
+        </div>
+
+        <div class="contenidor-joc">
+            <div class="fila-botons">
+                <button onclick="ferTirada(0)"></button>
+                <button onclick="ferTirada(1)"></button>
+                <button onclick="ferTirada(2)"></button>
+                <button onclick="ferTirada(3)"></button>
+                <button onclick="ferTirada(4)"></button>
+                <button onclick="ferTirada(5)"></button>
+                <button onclick="ferTirada(6)"></button>
+            </div>
+            
+            <div id="taulell-visual"></div>
+        </div>
+
+        <div class="panel-control">
+            <button onclick="reiniciarPartida()" class="boto-reset">New Game</button>
+            <button onclick="tornarMenu()" class="boto-menu">Main Menu</button>
+        </div>
+    </div>
+
+</body>
+</html>
