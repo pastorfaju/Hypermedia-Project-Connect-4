@@ -9,7 +9,7 @@ We've implemented two game modes:
 - Player vs Computer
 
 The game has real time updates for the scoreboard, turns and game state using notifications.
----
+
 
 CODE STRUCTURE AND ARCHITECTURE
 ---
@@ -20,7 +20,7 @@ The application toggles the .hidden CSS class to switch between these containers
 
 The board container #taulell-visual is initialized empty. The grid cells are initialized in JavaScript to keep the HTML clean.
 Buttons (.fila-botons) are placed above the grid columns to capture the user's clicks and move directly to the column indices of the array.
----
+
 
 VISUAL ASPECTS AND DECORATION
 ---
@@ -38,7 +38,7 @@ This class:
   display: none !important;
 }
 is super important because it connects directly to the JavaScript. When we add this class to a div, it "vanishes" completely. We use this to swap the menu screen for the game screen.
----
+
 
 
 
