@@ -61,17 +61,13 @@ The AI has 4 types of plays which are ordered by priority:
 4. Random Move: If no one is about to win, and the center was full (or skipped with the randomness), the AI just picks a random column.
 
 verificarVictoria is the win detection function. It checks if the last move (f, c) created a line of 4.
+for this we use comprovarDireccio which returns:
+
 function comprovarDireccio(deltaFila, deltaCol) { ... }
 return comprovarDireccio(0, 1) ||  // Horizontal
        comprovarDireccio(1, 0) ||  // Vertical
        comprovarDireccio(1, 1) ||  // Diagonal (Top-Left to Bottom-Right)
        comprovarDireccio(1, -1);   // Diagonal (Bottom-Left to Top-Right)
-
-//continuar dsps...
-
-
-
-
-
-
+       
+Instead of writing 4 separate loops, this function takes a vector (direction). (0,1) means to look at the same row, newt column and (1,1) means to look at the next row, next column. The code counts consecutive pieces moving forward in that direction, then counts backward in the opposite direction. If the total count is equal or higher than 4, it's a win.
 
